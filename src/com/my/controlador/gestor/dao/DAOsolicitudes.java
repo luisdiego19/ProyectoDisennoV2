@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class DAOSolicitudes {
+public class DAOsolicitudes {
     
     public void actualizarSolicitud(DTOSolicitud DTOsolicitud) throws Exception
     {
