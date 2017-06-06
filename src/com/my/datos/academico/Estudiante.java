@@ -4,8 +4,10 @@ public class Estudiante extends Persona {
     
     private String carnet;
     
-    public Estudiante(String ID, String Nombre, String Apellidos, String Correo, String Telefono) {
+    public Estudiante(String ID, String Nombre, String Apellidos, String Correo, String Telefono,
+    String Carnet) {
         super(ID, Nombre, Apellidos, Correo, Telefono);
+        this.carnet = Carnet;
     }
 
     public String getCarnet() {

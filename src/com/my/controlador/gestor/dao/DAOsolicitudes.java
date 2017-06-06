@@ -2,6 +2,8 @@ package com.my.controlador.gestor.dao;
 
 import com.my.controlador.dto.DTOSolicitud;
 import com.my.controlador.singleton.ConfigurationPaths;
+import com.my.datos.academico.Estudiante;
+import com.my.datos.academico.Persona;
 import com.my.datos.modificaciones.Solicitud;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -82,6 +84,20 @@ public class DAOsolicitudes {
                 solicitud.getEstado()
                 );
         return DTOsolicitud;        
+    }
+    
+    public static void main(String args[])
+    {
+        Estudiante estudiante = new Estudiante("116760644",
+                "Luis Diego", "Hidalgo Blanco",
+                "ldiegohcr@gmail.com",
+                "88390105", "2015032254");
+        Persona solicitante = estudiante;
+        
+        
+        
+        
+                
     }
     
 }

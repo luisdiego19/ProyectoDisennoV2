@@ -23,6 +23,21 @@ public class Solicitud {
         this.descripcion = descripcion;
     }
 
+    public Solicitud(Persona solicitante, Estudiante estudiante, String fecha, String descripcion) {
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+    }
+
+    public Solicitud(Persona solicitante, Estudiante estudiante, String fecha, String descripcion, Object evidencia) {
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.evidencia = evidencia;
+    }
+        
     public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, String date, String descripcion, Object evidencia, String pathResolucion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
@@ -32,6 +47,17 @@ public class Solicitud {
         this.evidencia = evidencia;
         this.pathResolucion = pathResolucion;
     }
+
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, String fecha, String descripcion, String pathResolucion) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.descripcion = descripcion;
+        this.pathResolucion = pathResolucion;
+    }
+    
+    
 
     public String getCodigo() {
         return codigo;
