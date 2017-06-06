@@ -2,8 +2,9 @@ package com.my.datos.modificaciones;
 
 import com.my.datos.academico.Estudiante;
 import com.my.datos.academico.Persona;
+import java.io.Serializable;
 
-public class Solicitud {
+public class Solicitud implements Serializable{
     
     private String codigo;
     private Persona solicitante;

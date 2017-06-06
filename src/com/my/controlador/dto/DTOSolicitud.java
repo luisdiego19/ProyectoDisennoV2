@@ -4,8 +4,9 @@ import com.my.datos.academico.Estudiante;
 import com.my.datos.academico.Persona;
 import com.my.datos.modificaciones.EstadoEnum;
 import com.my.datos.modificaciones.FechaHora;
+import java.io.Serializable;
 
-public class DTOSolicitud {
+public class DTOSolicitud implements Serializable{
     
     private String codigo;
     private Persona solicitante;
