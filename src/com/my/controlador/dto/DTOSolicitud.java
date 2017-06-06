@@ -3,20 +3,21 @@ package com.my.controlador.dto;
 import com.my.datos.academico.Estudiante;
 import com.my.datos.academico.Persona;
 import com.my.datos.modificaciones.EstadoEnum;
+import com.my.datos.modificaciones.FechaHora;
 
 public class DTOSolicitud {
     
     private String codigo;
     private Persona solicitante;
     private Estudiante estudiante; 
-    private String date; 
+    private FechaHora date; 
     private String descripcion; 
     private Object evidencia; 
     private String tipoInconsistencia;
     private String pathResolucion; 
     private EstadoEnum estado;
 
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, String date, String descripcion, String tipoInconsistencia, EstadoEnum estado) {
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, String tipoInconsistencia, EstadoEnum estado) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -26,7 +27,7 @@ public class DTOSolicitud {
         this.estado = estado;
     }
 
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, String date, String descripcion, Object evidencia, String tipoInconsistencia, String pathResolucion, EstadoEnum estado) {
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, Object evidencia, String tipoInconsistencia, String pathResolucion, EstadoEnum estado) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -62,11 +63,11 @@ public class DTOSolicitud {
         this.estudiante = estudiante;
     }
 
-    public String getFecha() {
+    public FechaHora getFecha() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(FechaHora date) {
         this.date = date;
     }
 

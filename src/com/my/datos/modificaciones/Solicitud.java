@@ -8,14 +8,14 @@ public class Solicitud {
     private String codigo;
     private Persona solicitante;
     private Estudiante estudiante; 
-    private String fecha; 
+    private FechaHora fecha; 
     private String descripcion; 
     private Object evidencia; 
     private String tipoInconsistencia = "Modificación Acta"; 
     private String pathResolucion; 
     private EstadoEnum estado = EstadoEnum.PENDIENTE; 
 
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, String date, String descripcion) {
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -23,22 +23,24 @@ public class Solicitud {
         this.descripcion = descripcion;
     }
 
-    public Solicitud(Persona solicitante, Estudiante estudiante, String fecha, String descripcion) {
+    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion) {
         this.solicitante = solicitante;
         this.estudiante = estudiante;
         this.fecha = fecha;
         this.descripcion = descripcion;
+        this.codigo = generarCodigo();
     }
 
-    public Solicitud(Persona solicitante, Estudiante estudiante, String fecha, String descripcion, Object evidencia) {
+    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion, Object evidencia) {
         this.solicitante = solicitante;
         this.estudiante = estudiante;
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.evidencia = evidencia;
+        this.codigo = generarCodigo();
     }
         
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, String date, String descripcion, Object evidencia, String pathResolucion) {
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, Object evidencia, String pathResolucion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -48,7 +50,7 @@ public class Solicitud {
         this.pathResolucion = pathResolucion;
     }
 
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, String fecha, String descripcion, String pathResolucion) {
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion, String pathResolucion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -57,6 +59,15 @@ public class Solicitud {
         this.pathResolucion = pathResolucion;
     }
     
+    
+    private String generarCodigo()
+    {
+        String uno = fecha.getTime().split(":")[0];
+        String dos = fecha.getTime().split(":")[1];
+        String tres = fecha.getTime().split(":")[2];
+        String milis = String.valueOf(fecha.getDate().getTime());
+        return milis+uno+dos+tres;                
+    }
     
 
     public String getCodigo() {
@@ -83,11 +94,11 @@ public class Solicitud {
         this.estudiante = estudiante;
     }
 
-    public String getFecha() {
+    public FechaHora getFecha() {
         return fecha;
     }
 
-    public void setDate(String date) {
+    public void setDate(FechaHora date) {
         this.fecha = date;
     }
 
