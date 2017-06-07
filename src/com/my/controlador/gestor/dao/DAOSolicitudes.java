@@ -52,7 +52,9 @@ public class DAOSolicitudes {
     {
         FileInputStream fileInputStream = new FileInputStream(ConfigurationPaths.getInstance().getPathSolicitudesLocal() + "\\" + codigo + ".sol");
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        Solicitud solicitud = (Solicitud) objectInputStream.readObject();        
+        Solicitud solicitud = (Solicitud) objectInputStream.readObject();  
+        fileInputStream.close();
+        objectInputStream.close();
         return solicitud; 
     }          
     
@@ -67,10 +69,12 @@ public class DAOSolicitudes {
                 FileInputStream fileInputStream = new FileInputStream(listaArchivos[i]);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
                 Solicitud solicitud = (Solicitud)objectInputStream.readObject();    
+                fileInputStream.close();
+                objectInputStream.close();
                 DTOSolicitud DTOsolicitud = convertirSolicitud(solicitud);
                 solicitudesLocales.add(DTOsolicitud);
             }
-        }
+        }        
         return solicitudesLocales;                     
     }
     
