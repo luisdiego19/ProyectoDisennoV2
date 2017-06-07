@@ -1,6 +1,8 @@
 package com.my.datos.academico;
 
-public class Periodo {
+import java.io.Serializable;
+
+public class Periodo implements Serializable{
     
     private int codigo; 
     private String nombre;

@@ -72,7 +72,23 @@ public class Solicitud implements Serializable{
         this.descripcion = descripcion;
         this.pathResolucion = pathResolucion;
     }
-        
+       
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia, String pathResolucion,
+            String tipoInconsistencia, EstadoEnum estado) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.evidencia = evidencia;
+        this.pathResolucion = pathResolucion;
+        this.tipoInconsistencia = tipoInconsistencia;
+        this.estado = estado;
+    }
+    
+    
     private String generarCodigo()
     {
         String uno = fecha.getTime().split(":")[0];

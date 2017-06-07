@@ -1,8 +1,9 @@
 package com.my.datos.academico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Curso {
+public class Curso implements Serializable{
     
     private String codigo;
     private String nombre;
@@ -10,6 +11,13 @@ public class Curso {
     private Periodo perido;
     private int creditos;
 
+    public Curso(String codigo, String nombre, Periodo perido, int creditos) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.perido = perido;
+        this.creditos = creditos;
+    }
+        
     public Curso(String codigo, String nombre, ArrayList<Grupo> grupos, Periodo perido, int creditos) {
         this.codigo = codigo;
         this.nombre = nombre;

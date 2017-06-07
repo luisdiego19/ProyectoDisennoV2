@@ -21,17 +21,7 @@ public class DTOSolicitud implements Serializable{
     private String pathResolucion; 
     private EstadoEnum estado;
 
-   public DTOSolicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
-        this.curso = curso;
-        this.numGrupo = numGrupo;
-        this.descripcion = descripcion;
-    }
-
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, 
-            String tipoInconsistencia, EstadoEnum estado) {
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia, String tipoInconsistencia, String pathResolucion, EstadoEnum estado) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -39,43 +29,12 @@ public class DTOSolicitud implements Serializable{
         this.curso = curso;
         this.numGrupo = numGrupo;
         this.descripcion = descripcion;
+        this.evidencia = evidencia;
         this.tipoInconsistencia = tipoInconsistencia;
+        this.pathResolucion = pathResolucion;
         this.estado = estado;
     }
-
-    public DTOSolicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia) {
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
-        this.curso = curso;
-        this.numGrupo = numGrupo;
-        this.descripcion = descripcion;
-        this.evidencia = evidencia;
-    }
-
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia, String pathResolucion) {
-        this.codigo = codigo;
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
-        this.curso = curso;
-        this.numGrupo = numGrupo;
-        this.descripcion = descripcion;
-        this.evidencia = evidencia;
-        this.pathResolucion = pathResolucion;
-    }
-
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, String pathResolucion) {
-        this.codigo = codigo;
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
-        this.curso = curso;
-        this.numGrupo = numGrupo;
-        this.descripcion = descripcion;
-        this.pathResolucion = pathResolucion;
-    }
-                           
+                                   
     public String getCodigo() {
         return codigo;
     }
