@@ -7,8 +7,8 @@ public class Curso {
     private String codigo;
     private String nombre;
     private ArrayList<Grupo> grupos; 
-    private Periodo perido; 
-    private int credigos; 
+    private Periodo perido;
+    private int credigos;
 
     public Curso(String codigo, String nombre, ArrayList<Grupo> grupos, Periodo perido, int credigos) {
         this.codigo = codigo;
