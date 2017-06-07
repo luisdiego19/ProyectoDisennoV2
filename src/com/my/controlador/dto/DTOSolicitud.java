@@ -30,7 +30,8 @@ public class DTOSolicitud implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, 
+            String tipoInconsistencia, EstadoEnum estado) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
@@ -38,6 +39,8 @@ public class DTOSolicitud implements Serializable{
         this.curso = curso;
         this.numGrupo = numGrupo;
         this.descripcion = descripcion;
+        this.tipoInconsistencia = tipoInconsistencia;
+        this.estado = estado;
     }
 
     public DTOSolicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia) {

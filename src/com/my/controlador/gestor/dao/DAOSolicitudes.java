@@ -35,6 +35,8 @@ public class DAOSolicitudes {
                 DTOsolicitud.getSolicitante(),
                 DTOsolicitud.getEstudiante(),
                 DTOsolicitud.getFecha(),
+                DTOsolicitud.getCurso(),
+                DTOsolicitud.getNumGrupo(),
                 DTOsolicitud.getDescripcion(),
                 DTOsolicitud.getEvidencia(),
                 DTOsolicitud.getPathResolucion()
@@ -77,6 +79,8 @@ public class DAOSolicitudes {
                 solicitud.getSolicitante(),
                 solicitud.getEstudiante(),
                 solicitud.getFecha(),
+                solicitud.getCurso(),
+                solicitud.getNumGrupo(),
                 solicitud.getDescripcion(),  
                 solicitud.getTipoInconsistencia(),
                 solicitud.getEstado()
