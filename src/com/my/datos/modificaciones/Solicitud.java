@@ -1,5 +1,6 @@
 package com.my.datos.modificaciones;
 
+import com.my.datos.academico.Curso;
 import com.my.datos.academico.Estudiante;
 import com.my.datos.academico.Persona;
 import java.io.Serializable;
@@ -10,57 +11,68 @@ public class Solicitud implements Serializable{
     private Persona solicitante;
     private Estudiante estudiante; 
     private FechaHora fecha; 
+    private Curso curso; 
+    private int numGrupo;
     private String descripcion; 
     private Object evidencia; 
     private String tipoInconsistencia = "Modificación Acta"; 
     private String pathResolucion; 
     private EstadoEnum estado = EstadoEnum.PENDIENTE; 
 
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion) {
+    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.codigo = generarCodigo();
+    }
+
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
-        this.fecha = date;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
         this.descripcion = descripcion;
     }
 
-    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion) {
+    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia) {
         this.solicitante = solicitante;
         this.estudiante = estudiante;
         this.fecha = fecha;
-        this.descripcion = descripcion;
-        this.codigo = generarCodigo();
-    }
-
-    public Solicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion, Object evidencia) {
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
         this.descripcion = descripcion;
         this.evidencia = evidencia;
         this.codigo = generarCodigo();
+    }
+
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia, String pathResolucion) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.evidencia = evidencia;
+        this.pathResolucion = pathResolucion;
+    }
+
+    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, String pathResolucion) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.pathResolucion = pathResolucion;
     }
         
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, Object evidencia, String pathResolucion) {
-        this.codigo = codigo;
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = date;
-        this.descripcion = descripcion;
-        this.evidencia = evidencia;
-        this.pathResolucion = pathResolucion;
-    }
-
-    public Solicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, String descripcion, String pathResolucion) {
-        this.codigo = codigo;
-        this.solicitante = solicitante;
-        this.estudiante = estudiante;
-        this.fecha = fecha;
-        this.descripcion = descripcion;
-        this.pathResolucion = pathResolucion;
-    }
-    
-    
     private String generarCodigo()
     {
         String uno = fecha.getTime().split(":")[0];
@@ -69,8 +81,23 @@ public class Solicitud implements Serializable{
         String milis = String.valueOf(fecha.getDate().getTime());
         return milis+uno+dos+tres;                
     }
-    
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public int getNumGrupo() {
+        return numGrupo;
+    }
+
+    public void setNumGrupo(int numGrupo) {
+        this.numGrupo = numGrupo;
+    }
+           
     public String getCodigo() {
         return codigo;
     }

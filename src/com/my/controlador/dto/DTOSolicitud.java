@@ -1,5 +1,6 @@
 package com.my.controlador.dto;
 
+import com.my.datos.academico.Curso;
 import com.my.datos.academico.Estudiante;
 import com.my.datos.academico.Persona;
 import com.my.datos.modificaciones.EstadoEnum;
@@ -11,35 +12,67 @@ public class DTOSolicitud implements Serializable{
     private String codigo;
     private Persona solicitante;
     private Estudiante estudiante; 
-    private FechaHora date; 
+    private FechaHora fecha; 
+    private Curso curso; 
+    private int numGrupo;
     private String descripcion; 
     private Object evidencia; 
     private String tipoInconsistencia;
     private String pathResolucion; 
     private EstadoEnum estado;
 
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, String tipoInconsistencia, EstadoEnum estado) {
-        this.codigo = codigo;
+   public DTOSolicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
         this.solicitante = solicitante;
         this.estudiante = estudiante;
-        this.date = date;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
         this.descripcion = descripcion;
-        this.tipoInconsistencia = tipoInconsistencia;
-        this.estado = estado;
     }
 
-    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora date, String descripcion, Object evidencia, String tipoInconsistencia, String pathResolucion, EstadoEnum estado) {
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion) {
         this.codigo = codigo;
         this.solicitante = solicitante;
         this.estudiante = estudiante;
-        this.date = date;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+    }
+
+    public DTOSolicitud(Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia) {
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
         this.descripcion = descripcion;
         this.evidencia = evidencia;
-        this.tipoInconsistencia = tipoInconsistencia;
-        this.pathResolucion = pathResolucion;
-        this.estado = estado;
     }
 
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, Object evidencia, String pathResolucion) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.evidencia = evidencia;
+        this.pathResolucion = pathResolucion;
+    }
+
+    public DTOSolicitud(String codigo, Persona solicitante, Estudiante estudiante, FechaHora fecha, Curso curso, int numGrupo, String descripcion, String pathResolucion) {
+        this.codigo = codigo;
+        this.solicitante = solicitante;
+        this.estudiante = estudiante;
+        this.fecha = fecha;
+        this.curso = curso;
+        this.numGrupo = numGrupo;
+        this.descripcion = descripcion;
+        this.pathResolucion = pathResolucion;
+    }
+                           
     public String getCodigo() {
         return codigo;
     }
@@ -65,13 +98,31 @@ public class DTOSolicitud implements Serializable{
     }
 
     public FechaHora getFecha() {
-        return date;
+        return fecha;
     }
 
-    public void setDate(FechaHora date) {
-        this.date = date;
+    public void setFecha(FechaHora fecha) {
+        this.fecha = fecha;
     }
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public int getNumGrupo() {
+        return numGrupo;
+    }
+
+    public void setNumGrupo(int numGrupo) {
+        this.numGrupo = numGrupo;
+    }
+
+    
+    
     public String getDescripcion() {
         return descripcion;
     }
