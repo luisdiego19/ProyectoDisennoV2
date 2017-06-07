@@ -2,19 +2,13 @@ package com.my.controlador.gestor.dao;
 
 import com.my.controlador.dto.DTOSolicitud;
 import com.my.controlador.singleton.ConfigurationPaths;
-import com.my.datos.academico.Estudiante;
-import com.my.datos.academico.Persona;
-import com.my.datos.modificaciones.FechaHora;
 import com.my.datos.modificaciones.Solicitud;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class DAOSolicitudes {
     
