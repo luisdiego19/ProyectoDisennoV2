@@ -10,12 +10,12 @@ public class Curso {
     private Periodo perido;
     private int creditos;
 
-    public Curso(String codigo, String nombre, ArrayList<Grupo> grupos, Periodo perido, int cretigos) {
+    public Curso(String codigo, String nombre, ArrayList<Grupo> grupos, Periodo perido, int creditos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.grupos = grupos;
         this.perido = perido;
-        this.creditos = cretigos;
+        this.creditos = creditos;
     }
 
     public String getCodigo() {
