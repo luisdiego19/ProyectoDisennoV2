@@ -8,14 +8,14 @@ public class Curso {
     private String nombre;
     private ArrayList<Grupo> grupos; 
     private Periodo perido;
-    private int credigos;
+    private int creditos;
 
     public Curso(String codigo, String nombre, ArrayList<Grupo> grupos, Periodo perido, int credigos) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.grupos = grupos;
         this.perido = perido;
-        this.credigos = credigos;
+        this.creditos = credigos;
     }
 
     public String getCodigo() {
@@ -51,11 +51,11 @@ public class Curso {
     }
 
     public int getCredigos() {
-        return credigos;
+        return creditos;
     }
 
     public void setCredigos(int credigos) {
-        this.credigos = credigos;
+        this.creditos = credigos;
     }
     
     
