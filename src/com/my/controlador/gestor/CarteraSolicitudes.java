@@ -1,5 +1,5 @@
 package com.my.controlador.gestor;
-import com.my.controlador.gestor.dao.DAOsolicitudes;
+import com.my.controlador.gestor.dao.DAOSolicitudes;
 import java.util.ArrayList;
 
 
